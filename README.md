@@ -1,3 +1,9 @@
+
+# Para rodar o projeto, comandos no terminal:
+    npm install
+    npm run dev
+
+
 # novo-maverick
 Novo front para o site [maverick.td.utfpr.edu.br](http://maverick.td.utfpr.edu.br/)
 

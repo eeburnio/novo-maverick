@@ -25,11 +25,12 @@ import Teoria from "./components/ihc/Teoria.tsx";
 import Teste from "./components/ihc/Teste.tsx";
 import Heuristica from "./components/ihc/Heuristica.tsx";
 
-import { useState } from 'react';
+
+
+
+//import Front1 from "./components/front1/Front1";
 
 function App() {
-  const [tema, setTema] = useState<'claro' | 'escuro' | 'maverick'>('claro');
-
   useGSAP(() => {
     const h1 = new SplitText("h1", {
       type: "chars, words",
@@ -71,30 +72,13 @@ function App() {
 
   return (
     <>
-      <section className={`container ${tema}`}>
-        
+      <section className="container">
         <section className="sideMenu" >
-          <div>
+          <div >
             <img src="/img/logoUTFPR.png" alt="Logo UTFPR" style={{ width: '300px', maxWidth: '100%', paddingBottom: '16px' }} />
 
             <h1> <Link to="/">{text.title}</Link> </h1>
             <h2>{text.subtitle}</h2>
-            
-            <div style={{ marginTop: '16px', marginBottom: '16px' }}>
-              <label htmlFor="theme-select" style={{ display: 'block', fontSize: '0.9rem', marginBottom: '4px', fontWeight: 'bold' }}>
-                Mudar Visual:
-              </label>
-              <select 
-                id="theme-select"
-                value={tema} 
-                onChange={(e) => setTema(e.target.value as any)}
-                style={{ padding: '6px', width: '100%', borderRadius: '4px', cursor: 'pointer' }}
-              >
-                <option value="claro">Modo Claro</option>
-                <option value="escuro">Modo Escuro</option>
-                
-              </select>
-            </div>
           </div>
 
           <Menu />
@@ -158,6 +142,7 @@ function App() {
             <Route path="/ihc" element={<Ihc />} />
             <Route path="/ihc/teoria" element={<Teoria />} />
             <Route path="/ihc/teste" element={<Teste />} />
+            <Route path="/ihc/heuristica" element={<Heuristica />} />
 
 
           </Routes>

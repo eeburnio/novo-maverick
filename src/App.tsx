@@ -6,6 +6,8 @@ import { Link, Routes, Route } from "react-router";
 import Menu from "./components/Menu";
 import text from "./constants/text";
 
+import Slides from "./components/Slides";
+
 import Front1 from './components/front1/Front1.tsx'
 import Html from './components/front1/Html.tsx'
 import Css from "./components/front1/Css.tsx";
@@ -102,6 +104,12 @@ function App() {
           <Menu />
 
           <div className="disciplines">
+            <div className="discipline slides">
+              <h3> <Link to="slides">Slides</Link> </h3>
+            </div>
+          </div>
+
+          <div className="disciplines">
             <div className="discipline front1">
               <h3> <Link to="front1">Front 1</Link> </h3>
               <ul>
@@ -143,6 +151,8 @@ function App() {
 
         <section className="ConteudoPrincipal">
           <Routes>
+            <Route path="/slides" element={<Slides />} />
+            
             <Route path="/front1" element={<Front1 />} />
             <Route path="/front1/html" element={<Html />} />
             <Route path="/front1/css" element={<Css />} />
@@ -163,8 +173,7 @@ function App() {
             <Route path="/ihc/teoria" element={<Teoria />} />
             <Route path="/ihc/teste" element={<Teste />} />
             <Route path="/ihc/heuristica" element={<Heuristica />} />
-
-
+            
           </Routes>
         </section>
       </section>

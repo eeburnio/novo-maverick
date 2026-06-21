@@ -1,68 +1,123 @@
-nav {
-  margin: 40px 0;
-}
+  nav {
+    margin: 40px 0;
+  }
 
-section {
-  width: 50%;
-  float: left;
-}
+  section {
+    width: 50%;
+    float: left;
+  }
 
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
 
-.sideMenu {
-  width: 25%;
-  padding: 32px 32px;
-  height: 100vh;
-  float: left;
-  background-color: rgba(64, 77, 77, 0.123);
-}
+  .sideMenu {
+    width: 25%;
+    padding: 32px 32px;
+    height: 100vh;
+    float: left;
+    background-color: rgba(64, 77, 77, 0.123);
+  }
 
-.ConteudoPrincipal {
-  width: 75%;
-  padding: 32px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
+  .ConteudoPrincipal {
+    width: 75%;
+    padding: 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-.container, .sideMenu, .ConteudoPrincipal, section, a, h1, h2, h3, ul, li {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
-}
-/* ---------------- TEMA CLARO ---------------- */
-.container.claro {
-  background-color: #ffffff;
-  color: #2c3e50;
-}
+  a {
+    text-decoration: none;
+  }
 
-.container.claro .sideMenu {
-  background-color: rgba(64, 77, 77, 0.08);
-  border-right: 1px solid #e0e0e0;
-}
+  .container, .sideMenu, .ConteudoPrincipal, section, a, h1, h2, h3, ul, li {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
+  }
+  /* ---------------- TEMA CLARO ---------------- */
+  .container.claro {
+    background-color: #ffffff;
+    color: #2c3e50;
+  }
 
-.container.claro a {
-  color: #0066cc;
-}
-/* ---------------- TEMA ESCURO ---------------- */
-.container.escuro {
-  background-color: #121212;
-  color: #e0e0e0;
-}
+  .container.claro .sideMenu {
+    background-color: rgba(64, 77, 77, 0.08);
+    border-right: 1px solid #e0e0e0;
+  }
 
-.container.escuro .sideMenu {
-  background-color: #1c1c1c;
-  border-right: 1px solid #333333;
-}
+  .container.claro a {
+    color: #0066cc;
+  }
+  /* ---------------- TEMA ESCURO ---------------- */
+  .container.escuro {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
 
-.container.escuro a {
-  color: #4fc3f7;
-}
+  .container.escuro .sideMenu {
+    background-color: #1c1c1c;
+    border-right: 1px solid #333333;
+  }
 
-.container.escuro .sideMenu img,
-.container.maverick .sideMenu img {
-  filter: brightness(0) invert(1);
-}
+  .container.escuro a {
+    color: #4fc3f7;
+  }
+
+  .container.escuro .sideMenu img,
+  .container.maverick .sideMenu img {
+    filter: brightness(0) invert(1);
+  }
+
+  /*---------------REsponsividade---------------------*/
+  @media (max-width: 768px) {
+
+    .container {
+      flex-direction: column;
+    }
+  
+    .sideMenu {
+      width: 100%;
+      height: auto;
+      padding: 16px;
+    }
+  
+    .ConteudoPrincipal {
+      width: 100%;
+    }
+
+    .sideMenu a {
+      font-size: 1.1rem;
+      padding: 10px 0;
+      display: inline-block;
+    }
+
+    .sideMenu h3 {
+      font-size: 1.3rem;
+    }
+
+  
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+
+
+    .sideMenu {
+      width: auto;
+      height: auto;
+      padding: 16px;
+    }
+
+    .sideMenu a {
+      font-size: 1.2rem;
+      padding: 8px 0;
+      display: inline-block;
+    }
+  
+    .sideMenu h3 {
+      font-size: 1.4rem;
+    }
+  
+  }

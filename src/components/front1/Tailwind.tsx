@@ -1,6 +1,32 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 function Tailwind() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+
+    tl.from("h3", {
+      y: -20,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    tl.from("p", {
+      y: 30,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.15,
+      ease: "power1.out",
+    }, "-=0.3");
+
+  }, { scope: containerRef });
+
   return (
-    <>
+    <div ref={containerRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
       <h3>Tailwind CSS</h3>
       <p>
         O <strong>Tailwind CSS</strong> é um framework CSS utilitário (utility-first) que permite
@@ -25,7 +51,7 @@ function Tailwind() {
           site oficial
         </a>.
       </p>
-    </>
+    </div>
   );
 }
 

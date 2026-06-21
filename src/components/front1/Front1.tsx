@@ -1,10 +1,33 @@
-function Front1() {
-  return (
-    
-    
-    <>
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-        <h3>
+function Front1() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+
+    tl.from("h3", {
+      y: -20,
+      opacity: 0,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    tl.from("h4, p, ul", {
+      y: 30,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.15,
+      ease: "power1.out",
+    }, "-=0.3");
+
+  }, { scope: containerRef });
+
+  return (
+    <div ref={containerRef} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
+      <h3>
         Desenvolvimento <i>Web Front-End</i> 1
       </h3>
 
@@ -13,11 +36,12 @@ function Front1() {
         Linguagens de marcação moderna para estruturação de conteúdo para Web. Linguagem de marcação moderna para estilização de conteúdo na Web.
         Boas práticas e padrões de apresentação, acessibilidade e responsividade dos conteúdos Web.
       </p>
+      
       <h4>Duração</h4>
       <p>60h</p>
 
       <h4>Objetivos de Aprendizagem</h4>
-      <ul>
+      <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <li>Compreender os fundamentos da linguagem JavaScript e sua aplicação no desenvolvimento web.</li>
         <li>Compreender a introdução à Web e os conceitos fundamentais para a criação de páginas estáticas na internet.</li>
         <li>Manipular linguagens de marcação moderna (HTML) para estruturar elementos de texto, mídias, tabelas e formulários.</li>
@@ -27,7 +51,7 @@ function Front1() {
       </ul>
 
       <h4>Conteúdos:</h4>
-      <ul>
+      <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <li>
           <strong>HTML (Estruturação):</strong> Introdução à Web e criação de páginas estáticas. 
           Linguagem de Marcação de Hipertexto HTML, marcações (tags), padrões e atributos. 
@@ -44,13 +68,12 @@ function Front1() {
       </ul>
 
       <h4>Ferramentas e Tecnologias</h4>
-      <ul>
-        <li><strong>HTML</strong>:Linguagem de marcação moderna utilizada para a organização e estruturação lógica de conteúdos Web.</li>
+      <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <li><strong>HTML</strong>: Linguagem de marcação moderna utilizada para a organização e estruturação lógica de conteúdos Web.</li>
         <li><strong>CSS</strong>: Tecnologia para estilização visual, controle de apresentação e desenvolvimento de interfaces responsivas.</li>
         <li><strong>Framework</strong>: Ferramenta e conjunto de padrões empregados para acelerar a criação de interfaces modernas e adaptativas.</li>
       </ul>
-      
-    </>
+    </div>
   );
 }
 

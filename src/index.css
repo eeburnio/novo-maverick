@@ -329,6 +329,11 @@ body {
   transition: var(--mv-transition);
 }
 
+.mv-card .btn-outline-primary:hover {
+  color: #fff;
+  transition: color 0s;
+}
+
 .mv-badge {
   background-color: var(--mv-badge-bg) !important;
   color: var(--mv-badge-text) !important;
